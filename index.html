@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title>ワンクリック詐欺サイト</title>
+  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!--google CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+  </head>
+  
+
+  <body>
+    
+    <div id="mesbox" class="collapse">
+      <div class="alert alert-success container">
+        
+        <div class="progress">
+          <div id="bar" class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: 0% ">
+          </div>
+        </div>
+        
+        <p id="message">写真を撮影しました</p>
+
+      </div>
+    </div>
+    
+    <div class="jumbotron" style="background: url('image/cover.jpg'); background-position: center;">
+    <div class="container">
+    
+      <h1 class="text-white">儲ける方法</h1>
+      <h2 class="text-white">何もせずに月３００万稼ぐ方法があります。</h2>
+      <p class="text-white">そんな夢のような方法を教えます。あなたも億万長者になりましょう。</p>
+      <p><a href="#mesbox" onclick="startLoad()" data-toggle="collapse" class="btn btn-primary btn-lg">詳細はこちら</a></p>
+      
+      <br>
+      <br>
+      <br>
+      <br>
+      
+    </div>
+    </div>
+      
+      <hr><p class="text-muted text-center">Copyright (C) 2021 ponta©</p></hr>
+      
+      <audio id="shutter" preload="auto">
+        <source src="sound/camera.mp3" type="audio/mp3"
+      </audio>
+      
+      <script>
+      var i = 0;
+        function startLoad(){
+          document.getElementById('shutter').play()
+          setInterval('loading()',45)
+        }
+        
+        function loading(){
+          switch (i){
+            case 20: document.getElementById('message').innerHTML = '写真を送信中...'; break;
+            case 40: document.getElementById('message').innerHTML = 'IPアドレスを取得中...'; break;
+            case 60: document.getElementById('message').innerHTML = 'IPアドレスから住所を特定中...'; break;
+            case 80: document.getElementById('message').innerHTML = '端末情報取得中...'; break;
+            case 90: document.getElementById('message').innerHTML = '情報送信中...'; break;
+            case 100: location.href = 'complete.html'; break;
+          }
+
+          document.getElementById('bar').style = 'width:' + i + '%';
+          i++;
+        }
+        
+      </script>
+  
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  </body>
+
+
+</html>
